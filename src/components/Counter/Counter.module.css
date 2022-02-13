@@ -1,0 +1,17 @@
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    margin-bottom: 10px;
+    background-color: #4c4c4c;
+    border-radius: 10px;
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.redNum {
+    font-size: 100px;
+    color: #e77f7f;
+}

@@ -1,0 +1,43 @@
+.buttonsWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 37%;
+    background-color: #4c4c4c;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 125px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+}
+.btn:hover {
+    border: #a19f9f 3px solid;
+}
+.btn:active {
+    background-color: #4c4c4c;
+    color: #ffffff;
+}
+
+.btnClick {
+    font-size: 32px;
+    background-color: #c6c6c6;
+}
+
+.btnDisabled {
+    width: 125px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #afafaf;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    opacity: 60%;
+}
