@@ -1,13 +1,14 @@
 import styles from "./Counter.module.css";
 import React from "react";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../redux/store";
 
-type CounterPropsType = {
-    counter: number
-}
-export const Counter = (props: CounterPropsType) => {
+export const Counter = () => {
+    const counter = useSelector<AppStoreType, number>(state => state.counter.value)
+
     return (
-        <div className={`${styles.counter} ${props.counter === 5 && styles.redNum}`}>
-            {props.counter}
+        <div className={`${styles.counter} ${counter === 5 && styles.redNum}`}>
+            {counter}
         </div>
     )
 }

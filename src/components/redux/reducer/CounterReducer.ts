@@ -1,21 +1,36 @@
-type ActionsType = ChangeCounterAC
-
 const CHANGE_COUNTER = "CHANGE_COUNTER";
+const RESET_COUNTER = "RESET_COUNTER";
 
-const initialState: number = 0;
+export type InitialStateType = typeof initialState
 
-export const CounterReducer = (state = initialState, action: ActionsType): number => {
+const initialState = {
+    value: 0
+};
+
+export const CounterReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case CHANGE_COUNTER:
-            let copyState = state + 1;
-            return copyState
+            return {...state, value: action.lastValue + 1}
+
+        case RESET_COUNTER:
+            return {...state, value: 0}
         default: return state;
     }
 }
 
+type ActionsType = ChangeCounterAC | ResetCounterAC
+
 type ChangeCounterAC = ReturnType<typeof changeCounterAC>
-export const changeCounterAC = () => {
+export const changeCounterAC = (lastValue: number) => {
     return {
         type: CHANGE_COUNTER,
-    }
+        lastValue
+    } as const
+}
+
+type ResetCounterAC = ReturnType<typeof resetCounterAC>
+export const resetCounterAC = () => {
+    return {
+        type: RESET_COUNTER,
+    } as const
 }
