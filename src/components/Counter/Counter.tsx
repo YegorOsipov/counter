@@ -6,7 +6,7 @@ type CounterPropsType = {
 }
 export const Counter = (props: CounterPropsType) => {
     return (
-        <div className={`${styles.counter} ${props.counter === 5 ? styles.redNum : ''}`}>
+        <div className={`${styles.counter} ${props.counter === 5 && styles.redNum}`}>
             {props.counter}
         </div>
     )

@@ -8,7 +8,7 @@ export const CounterReducer = (state = initialState, action: ActionsType): numbe
     switch (action.type) {
         case CHANGE_COUNTER:
             let copyState = state + 1;
-            return  copyState
+            return copyState
         default: return state;
     }
 }
