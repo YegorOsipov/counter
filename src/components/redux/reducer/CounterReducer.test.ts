@@ -9,7 +9,7 @@ beforeEach(() => {
 })
 
 test("counter should increase by 1", () => {
-    const endState = CounterReducer(startState, changeCounterAC(startState.value));
+    const endState = CounterReducer(startState, changeCounterAC());
     const newValue = 1;
 
     expect(endState.value).toBe(newValue);

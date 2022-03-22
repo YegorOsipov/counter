@@ -8,14 +8,14 @@ export const CounterButtons = () => {
     const counter = useSelector<AppStoreType, number>(state => state.counter.value)
     const dispatch = useDispatch()
 
-    const changeCounter = (counter: number) => dispatch(changeCounterAC(counter))
+    const changeCounter = () => dispatch(changeCounterAC())
     const resetCounter = () => dispatch(resetCounterAC())
     return (
         <div className={styles.buttonsWrapper}>
             {
                 counter === 5 ?
                 <button className={styles.btnDisabled} disabled>inc</button> :
-                <button className={styles.btn} onClick={() => changeCounter(counter)}>inc</button>
+                <button className={styles.btn} onClick={changeCounter}>inc</button>
             }
 
             {
